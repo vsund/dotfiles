@@ -11,12 +11,12 @@ These dotfiles use [Dotbot](https://github.com/anishathalye/dotbot) for installa
 * gtk
     * [`arc-theme`](https://github.com/horst3180/arc-theme)
 * i3
-    * [`i3blocks`](https://github.com/hvivien/i3blocks)
-    * [`i3-style`](https://github.com/hacrisci/i3-style)
+    * [`i3blocks`](https://github.com/vivien/i3blocks)
+    * [`i3-style`](https://github.com/acrisci/i3-style)
     * [`ttf-font-awesome`](https://aur.archlinux.org/packages/ttf-font-awesome)
     * [`ttf-font-icons`](https://aur.archlinux.org/packages/ttf-font-icons)
 * icons
-    * [`surfn`](https://github.com/herikdubois/Surfn)
+    * [`surfn`](https://github.com/erikdubois/Surfn)
 
 
 
