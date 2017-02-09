@@ -1,0 +1,5 @@
+- link:
+    ~/.config/i3: gui/i3
+
+- shell:
+    - [i3-style ~/.config/i3/themes/flat.yaml -o ~/.config/i3/config, Updating i3 colors]

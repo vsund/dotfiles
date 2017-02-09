@@ -1,0 +1,41 @@
+# vim: filetype=yaml
+---
+meta:
+  description: dark flat theme (generated)
+colors:
+  whitesmoke: '#f3f4f5' # text
+  lightslategrey: '#838c9d' # text inactive
+  darkslategrey: '#2f343f' # background
+  darkslategray: '#424655' #background light
+  crimson: '#e53935' # background urgent
+window_colors:
+  focused:
+    border: darkslategray
+    background: darkslategray
+    text: whitesmoke
+  unfocused:
+    border: darkslategray
+    background: darkslategray
+    text: lightslategrey
+  focused_inactive:
+    border: darkslategray
+    background: darkslategray
+    text: lightslategrey
+  urgent:
+    border: crimson
+    background: crimson
+    text: whitesmoke
+bar_colors:
+  background: darkslategrey
+  focused_workspace:
+    border: darkslategrey
+    background: darkslategrey
+    text: whitesmoke
+  inactive_workspace:
+    border: darkslategrey
+    background: darkslategrey
+    text: lightslategrey
+  urgent_workspace:
+    border: crimson
+    background: crimson
+    text: whitesmoke

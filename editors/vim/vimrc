@@ -1,0 +1,349 @@
+" vundle
+" set vIM mode
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+source ~/.vim/plugins.vim
+
+filetype plugin indent on
+
+" Get the defaults that most users want.
+source $VIMRUNTIME/defaults.vim
+
+
+if has('persistent_undo')
+  set undofile
+endif
+
+set undodir=$HOME/.vim/undofiles//
+set directory=$HOME/.vim/swapfiles//
+
+
+syntax on
+colorscheme onedark
+
+" files and backups
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+set clipboard=unnamedplus				" yank into system clipboard
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  augroup END
+
+  " remember curser position
+  autocmd BufReadPost *
+	\ if line("'\"") > 1 && line("'\"") <= line("$") |
+  	\	exe "normal! g`\"" |
+  	\ endif
+
+endif " has("autocmd")
+
+" Add optional packages.
+"
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+if has('syntax') && has('eval')
+  packadd matchit
+endif
+
+set autoindent				" always set autoindenting on
+set smartindent				" smart indent; stop indent when closing brackets etc
+
+" searching
+set hlsearch				" highlight search result
+set ignorecase				" ignore case
+set smartcase				" case-sensitive if expression contains capital letters
+set incsearch				" incremental search
+set nolazyredraw
+
+" delete whitespace, line break and char using <BS>
+set backspace=indent,eol,start
+set ruler					" always show curser position
+set history=1000			" keep 1000 lines of history
+" set textwidth=120
+set number					" display absolute number of current line
+set relativenumber			" display relative line numbers
+" encoding
+set fileencoding=utf-8
+" break at last word instead of last char
+set linebreak
+
+" tab control
+set noexpandtab				"  insert tabs
+set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set completeopt+=longest
+
+" invisible characters
+set list
+set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set showbreak=↪
+
+" code folding settings
+set foldmethod=syntax		" fold based on indent
+set foldnestmax=10			" deepest fold is 10 levels
+set nofoldenable			" don't fold by default
+set foldlevel=1
+
+set ttyfast					" faster redrawing
+set diffopt+=vertical
+set laststatus=2			" show the status line all the time
+set so=7					" set 7 lines to the cursors - when moving vertical
+set wildmenu				" enhanced command line completion
+" Search down into subfolders
+" Provides tab-completion for all file-releated tasks
+set path+=**
+set hidden					" current buffer can be put into background
+set showcmd					" show incomplete commands
+set noshowmode				" don't show which mode disabled for PowerLine
+set wildmode=list:longest	" complete files like a shell
+set scrolloff=3				" lines of text around cursor
+set shell=$SHELL
+set cmdheight=1				" command bar height
+set title					" set terminal title
+
+set magic					" set magix on, for regex
+
+set showmatch				" show matching braces
+set mat=2					" how many tenths of a second to blink
+set complete +=kspell		" autocomplete from the dictionary when spellchecking is enabled
+set spelllang=de,en				" set spell langs"
+
+" user commands
+
+" create tags file
+" ^]	jump to tag under cursor
+" g^]	for ambiguous tags
+" ^t	jump back in the tag stack
+command! MakeTags !ctags -R .
+
+" error bells
+set noerrorbells
+set visualbell
+set t_vb=
+set tm=500
+
+" turn on manpages (:Man)
+runtime ftplugin/man.vim
+
+" make comments and HTML attributes italic
+highlight Comment cterm=italic
+highlight htmlArg cterm=italic
+
+" set a map leader for more key combos
+let mapleader = ','
+
+" clear highlighted search
+" nnoremap <space> :set hlsearch! hlsearch?<cr>
+noremap <space> :nohlsearch<cr>
+
+" enable . command in visual mode
+vnoremap . :normal .<cr>
+
+map <silent> <C-h> :call functions#WinMove('h')<cr>
+map <silent> <C-j> :call functions#WinMove('j')<cr>
+map <silent> <C-k> :call functions#WinMove('k')<cr>
+map <silent> <C-l> :call functions#WinMove('l')<cr>
+
+" count wraped lines as one line when doing relative jumps
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+" scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" moving up and down work as you would expect
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+nnoremap <silent> ^ g^
+nnoremap <silent> $ g$
+
+" cool resizing
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Up> :resize -2<CR>
+nnoremap <Down> :resize +2<CR><Paste>
+
+" search for word under the cursor
+nnoremap <leader>/ "fyiw :/<c-r>f<cr>
+
+" helpers for dealing with other people's code
+nmap \t :set ts=4 sts=4 sw=4 noet<cr>
+nmap \s :set ts=4 sts=4 sw=4 et<cr>
+
+" highlight conflicts
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" make the highlighting of tabs and other non-text less annoying
+highlight SpecialKey ctermbg=none ctermfg=8
+highlight NonText ctermbg=none ctermfg=8
+
+" Section AutoGroups {{{
+" file type specific settings
+augroup configgroup
+    autocmd!
+
+    " automatically resize panes on resize
+    autocmd VimResized * exe 'normal! \<c-w>='
+    autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
+    autocmd BufWritePost .vimrc.local source %
+    " save all files on focus lost, ignoring warnings about untitled buffers
+    autocmd FocusLost * silent! wa
+
+    " make quickfix windows take all the lower section of the screen
+    " when there are multiple windows open
+    autocmd FileType qf wincmd J
+
+    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+    let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
+
+    " autocmd! BufEnter * call functions#ApplyLocalSettings(expand('<afile>:p:h'))
+
+    autocmd BufNewFile,BufRead,BufWrite *.md syntax match Comment /\%^---\_.\{-}---$/
+
+    autocmd! BufWritePost * Neomake
+augroup END
+
+" }}}
+
+" detect filetypes, use filetype plugins and autoindent
+filetype plugin indent on
+
+
+" paste without indention
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" make true colors in tmux work
+" set t_8f=x27[38;2;%lu;%lu;%lum
+" set t_8b=x27[48;2;%lu;%lu;%lum
+" true color
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+
+" airline options
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_powerline_fonts=1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_theme='onedark'
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
+let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)
+let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
+let g:airline#extensions#tabline#show_splits = 0
+
+" Toggle NERDTree
+nmap <silent> <leader>k :NERDTreeToggle<cr>
+" expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeFind<cr>
+" autocmd BufWinEnter * NERDTreeMirror
+
+let NERDTreeShowHidden=1
+let NERDTreeDirArrowExpandable = '▷'
+let NERDTreeDirArrowCollapsible = '▼'
+
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set filetype=%s ts=%d sw=%d tw=%d %set :",
+        \ &filetype, &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+" delimate config
+let delimitMate_expand_cr = 1
+
+" set textwidth for mails
+" au BufRead /tmp/mutt-* set tw=72
+autocmd FileType mail setlocal textwidth=72
+
+" netrw settings
+" (vim builtin filebrowser which ist also just a plugin bundled with vim)
+let g:netrw_banner	= 0	" disable banner
+let g:netrw_browse_split= 4	" open in prior window
+let g:netrw_altv	= 1	" open splits to the right
+let g:netrw_liststyle	= 3	" treeview
+let g:netrw_list_hide	= netrw_gitignore#Hide()
+let g:netrw_list_hide	.= ',\(^\|\s\s\)\zs\.\S\+'
+
+" racer config (rust autocomplete)
+let g:racer_cmd = "/home/me/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
+" close Goyo *and* vim with :q
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
+" vim: set filetype=vim ts=8 sw=2 tw=120 noet :

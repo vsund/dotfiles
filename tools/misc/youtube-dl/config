@@ -1,0 +1,3 @@
+--output ~/Downloads/Temp/"%(title)s-%(id)s.%(ext)s"
+--format mp4/webm/avi/mkv/flv
+--audio-format m4a/mp3/ogg/aac

@@ -1,0 +1,35 @@
+[user]
+  name = vsund
+  email = me@vsund.de
+  signingKey = 0x3DBF77B0E4E59C6E
+
+[color]
+  branch = true
+  diff = true
+  grep = true
+  pager = true
+  status = true
+  ui = always
+
+[core]
+  autocrlf = input
+  editor = vim
+
+[diff "pdf"]
+  textconv = pdf2txt2stout
+
+[push]
+  default = simple
+
+[url "git@github.com:"]
+  insteadOf = gh:
+  insteadOf = github:
+
+[url "git@git.vsund.de:"]
+  insteadOf = vs:
+
+[url "git@git.felixsinger.de:"]
+  insteadOf = fs:
+
+[github]
+  user = vsund

@@ -1,0 +1,9 @@
+[submodule "meta/dotbot"]
+	path = meta/dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "editors/vim/bundle/Vundle.vim"]
+	path = editors/vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim
+[submodule "terminals/colors/base16-shell"]
+	path = terminals/colors/base16-shell
+	url = https://github.com/chriskempson/base16-shell

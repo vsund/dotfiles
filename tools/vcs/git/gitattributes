@@ -1,0 +1,16 @@
+*.png diff=nodiff
+*.jpg diff=nodiff
+*.gif diff=nodiff
+*.ttf diff=nodiff
+*.woff diff=nodiff
+*.eot diff=nodiff
+*.svg diff=nodiff
+*.swf diff=nodiff
+*.fla diff=nodiff
+*.m4v diff=nodiff
+*.flv diff=nodiff
+*.ogv diff=nodiff
+*.webm diff=nodiff
+*.mp4 diff=nodiff
+
+*.pdf diff=pdf

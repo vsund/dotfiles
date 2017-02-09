@@ -1,0 +1,135 @@
+# Dotfiles
+
+These dotfiles use [Dotbot](https://github.com/anishathalye/dotbot) for installation.
+
+
+## Dependencies
+
+* general
+    * `python`
+    * `git`
+* gtk
+    * [`arc-theme`](https://github.com/horst3180/arc-theme)
+* i3
+    * [`i3blocks`](https://github.com/hvivien/i3blocks)
+    * [`i3-style`](https://github.com/hacrisci/i3-style)
+    * [`ttf-font-awesome`](https://aur.archlinux.org/packages/ttf-font-awesome)
+    * [`ttf-font-icons`](https://aur.archlinux.org/packages/ttf-font-icons)
+* icons
+    * [`surfn`](https://github.com/herikdubois/Surfn)
+
+
+
+## Installation
+
+```bash
+~$ git clone --recursive https://github.com/vsund/dotfiles .dotfiles
+```
+
+For installing a predefined profile:
+
+```bash
+~/.dotfiles$ ./install-profile <profile> [<configs...>]
+# see meta/profiles/ for available profiles
+```
+
+For installing single configurations:
+
+```bash
+~/.dotfiles$ ./install-standalone <configs...>
+# see meta/configs/ for available configurations
+```
+
+You can run these installation commands safely multiple times, if you think that helps with better installation.
+
+
+## Contents
+
+### Profiles
+
+```bash
+meta/profiles/
+├── server
+└── workstation
+```
+
+### Dotbot configurations
+
+```bash
+meta/configs/
+├── bash.yaml
+├── fonts.yaml
+├── git.yaml
+├── gnupg.yaml
+├── gtk.yaml
+├── i3.yaml
+├── icons.yaml
+├── profile.yaml
+├── qt.yaml
+├── terminal-colors.yaml
+├── termite.yaml
+├── vim.yaml
+├── x11.yaml
+└── youtube-dl.yaml
+```
+
+### Dotfiles
+
+```bash
+.
+├── editors
+│   └── vim
+│       ├── autoload
+│       ├── bundle
+│       ├── plugins.vim
+│       ├── spell
+│       ├── swapfiles
+│       ├── undofiles
+│       └── vimrc
+├── gui
+│   ├── fonts
+│   ├── gtk
+│   │   ├── 2
+│   │   └── 3
+│   ├── i3
+│   │   ├── config
+│   │   ├── i3blocks.conf
+│   │   └── lock.sh
+│   ├── icons
+│   │   └── flat.yaml
+│   ├── qt
+│   │   └── Trolltech.conf
+│   └── x11
+│       └── xinitrc
+├── shells
+│   ├─── bash
+│   │   ├── aliases
+│   │   ├── bashrc
+│   │   ├── logout
+│   │   └── profile
+│   └── profile
+├── terminals
+│   ├── colors
+│   │   └── base16-shell
+│   └── termite
+│       └── config
+└── tools
+    ├── crypto
+    │   └── gpg
+    │       ├── dirmngr.conf
+    │       ├── gpg-agent.conf
+    │       └── gpg.conf
+    ├── misc
+    │   ├── rofi
+    │   │   └── config
+    │   ├── teiler
+    │   │   ├── config
+    │   │   ├── profiles
+    │   │   └── uploader
+    │   └── youtube-dl
+    │       └── config
+    └── vcs
+        └── git
+            ├── gitattributes
+            └── gitconfig
+```

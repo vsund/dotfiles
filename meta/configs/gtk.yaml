@@ -1,0 +1,7 @@
+- link:
+    ~/.gtkrc-2.0: 
+        path:  gui/gtk/2/gtkrc-2.0
+        force: true
+    ~/.config/gtk-3.0/settings.ini:
+        path:  gui/gtk/3/settings.ini
+        force: true

@@ -1,0 +1,34 @@
+#systemctl
+alias sctl='sudo systemctl'
+source /usr/share/bash-completion/completions/systemctl
+complete -F _systemctl sctl
+
+#ls
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -lisahF'
+
+#cd
+alias ..='cd ..'
+alias ...='cd ../..'
+
+
+#sprunge
+alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+
+#tor
+alias check-tor='curl --socks4a localhost:9050 -L https://check.torproject.org/api/ip; echo'
+alias curl-tor='curl --socks4a localhost:9050'
+
+#use clipboard by default
+alias xclip='xclip -selection c'
+
+#ssh with password auth
+alias ssh-pw='ssh -o PreferredAuthentications=password'
+
+#gpg
+alias gpg='gpg --expert'
+alias gpg2='gpg2 --expert'
+
+#qrclip
+alias qrclip='xclip -o | qr2'
