@@ -1,2 +1,7 @@
+- shell:
+    - [mkdir -p ~/Bilder/Screenshots, Creating screenshots directory]
+    - [mkdir -p ~/Videos/Screencasts, Creating screencasts directory]
+    - [mkdir -p ~/Dokumente/Pastes, Creating pastes directory]
+
 - link:
     ~/.config/teiler: tools/misc/teiler
