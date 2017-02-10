@@ -5,7 +5,7 @@
 # the path where images, videos and pastes should be saved
 img_path=$HOME/Bilder/Screenshots
 vid_path=$HOME/Videos/Screencasts
-paste_path=$HOME/Bilder/Paste
+paste_path=$HOME/Dokumente/Pastes
 
 # set viewer for images and videos plus editor for images
 viewer=geeqie
