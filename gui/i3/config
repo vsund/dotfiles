@@ -219,7 +219,7 @@ mode "resize" {
 set $mode_system System:   L :  | S :  | P :  | R :  | E :   
 mode "$mode_system" {
   bindsym l exec --no-startup-id ~/.config/i3/lock.sh, mode "default"
-  bindsym s exec --no-startup-id $Lock systemctl suspend, mode "default
+  bindsym s exec --no-startup-id systemctl suspend, mode "default
   bindsym p exec --no-startup-id systemctl poweroff, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym e exec --no-startup-id i3-msg exit, mode "default"
