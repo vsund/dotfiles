@@ -1,2 +1,6 @@
+# Ignore all plugins but vundle
+editors/vim/bundle/*
+!editors/vim/bundle/Vundle.vim
+
 editors/vim/swapfiles/*
 editors/vim/undofiles/*
