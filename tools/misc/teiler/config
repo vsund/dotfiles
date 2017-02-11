@@ -40,7 +40,7 @@ profile="mp4-pulse"
 
 # hotkeys
 upload="Alt+1"
-noupload="Alt+2"
+save="Alt+2"
 delayup="Alt+3"
 delaysave="Alt+4"
 
