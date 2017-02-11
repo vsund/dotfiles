@@ -19,6 +19,8 @@ endif
 set undodir=$HOME/.vim/undofiles//
 set directory=$HOME/.vim/swapfiles//
 
+" search for ctags in the dir of the current file, then look downwards
+set tags=./tags;
 
 syntax on
 colorscheme onedark
