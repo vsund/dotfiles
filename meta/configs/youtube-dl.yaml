@@ -1,4 +1,4 @@
-- shell
+- shell:
     - [mkdir -p ~/Downloads/Temp, Creating download directory]
 
 - link:
