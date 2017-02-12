@@ -50,7 +50,8 @@ You can run these installation commands safely multiple times, if you think that
 ```
 meta/profiles/
 ├── server
-└── workstation
+├── workstation
+└── workstation-minimal
 ```
 
 ### Dotbot configurations
