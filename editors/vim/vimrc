@@ -23,7 +23,7 @@ set directory=$HOME/.vim/swapfiles//
 set tags=./tags;
 
 syntax on
-colorscheme onedark
+silent! colorscheme onedark
 
 " files and backups
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
