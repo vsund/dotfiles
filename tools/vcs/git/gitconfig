@@ -21,6 +21,10 @@
 [push]
   default = simple
 
+[alias]
+  update-submodules = submodule update --init --recursive
+  upgrade-submodules = submodule update --init --remote
+
 [url "git@github.com:"]
   insteadOf = gh:
   insteadOf = github:
