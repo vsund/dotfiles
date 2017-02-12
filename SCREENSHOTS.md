@@ -1,19 +1,19 @@
 # Screenshots
 
 ## i3 and general look
-[![plain-i3](https://i.imgur.com/5J6CKiW.jpg)](https://i.imgur.com/5J6CKiW.jpg)
+![plain-i3](meta/screenshots/plain-i3.png)
 
 ## rofi
-[![rofi](https://i.imgur.com/Ks1Cwil.jpg)](https://i.imgur.com/Ks1Cwil.jpg)
+![rofi](meta/screenshots/rofi.png)
 
 ## termite / bash
-[![termite-bash](https://i.imgur.com/IRzWoKp.jpg)](https://i.imgur.com/IRzWoKp.jpg)
+![termite-bash](meta/screenshots/termite-bash.png)
 
 ## thunar / arc theme / surfn icons
-[![thunar-arc-surfn](https://i.imgur.com/ulqEguS.png)](https://i.imgur.com/ulqEguS.png)
+![thunar-arc-surfn](meta/screenshots/thunar-arc-surfn.png)
 
 ## vim
-[![vim](https://i.imgur.com/YpykMeO.png)](https://i.imgur.com/YpykMeO.png)
+![vim](meta/screenshots/vim.png)
 
 ## dunst
-[![dunst](https://i.imgur.com/xkkDru3.jpg)](https://i.imgur.com/xkkDru3.jpg)
+![dunst](meta/screenshots/dunst.png)
