@@ -47,7 +47,7 @@ You can run these installation commands safely multiple times, if you think that
 
 ### Profiles
 
-```bash
+```
 meta/profiles/
 ├── server
 └── workstation
@@ -55,7 +55,7 @@ meta/profiles/
 
 ### Dotbot configurations
 
-```bash
+```
 meta/configs/
 ├── bash.yaml
 ├── dunst.yaml
@@ -78,7 +78,7 @@ meta/configs/
 
 ### Dotfiles
 
-```bash
+```
 .
 ├── editors
 │   └── vim
