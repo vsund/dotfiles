@@ -58,14 +58,17 @@ meta/profiles/
 ```bash
 meta/configs/
 ├── bash.yaml
+├── dunst.yaml
 ├── fonts.yaml
 ├── git.yaml
 ├── gnupg.yaml
 ├── gtk.yaml
 ├── i3.yaml
 ├── icons.yaml
+├── parcellite.yaml
 ├── profile.yaml
 ├── qt.yaml
+├── teiler.yaml
 ├── terminal-colors.yaml
 ├── termite.yaml
 ├── vim.yaml
@@ -87,6 +90,8 @@ meta/configs/
 │       ├── undofiles
 │       └── vimrc
 ├── gui
+│   ├── dunst
+│   │   └── dunstrc
 │   ├── fonts
 │   ├── gtk
 │   │   ├── 2
@@ -120,6 +125,8 @@ meta/configs/
     │       ├── gpg-agent.conf
     │       └── gpg.conf
     ├── misc
+    │   ├── parcellite
+    │   │   └── parcelliterc
     │   ├── rofi
     │   │   └── config
     │   ├── teiler
