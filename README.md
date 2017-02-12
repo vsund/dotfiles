@@ -1,6 +1,7 @@
 # Dotfiles
 
 These dotfiles use [Dotbot](https://github.com/anishathalye/dotbot) for installation.
+There are [screenshots](https://github.com/vsund/dotfiles/blob/master/SCREENSHOTS.md) available (because everybody loves screenshots).
 
 
 ## Dependencies
