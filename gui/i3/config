@@ -251,6 +251,7 @@ exec qopenvpn
 exec compton
 exec ~/.fehbg
 exec parcellite -n
+exec dunst -config ~/.config/dunst/dunstrc
 
 
 
