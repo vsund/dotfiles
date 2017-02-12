@@ -18,9 +18,6 @@
   autocrlf = input
   editor = vim
 
-[diff "pdf"]
-  textconv = pdf2txt2stout
-
 [push]
   default = simple
 
