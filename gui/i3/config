@@ -177,6 +177,7 @@ assign [class="^Termite$"] $workspace2
 assign [class="^Eclipse$"] $workspace3
 assign [class="^Java$"] $workspace3
 assign [class="^DrRacket$"] $workspace3
+assign [class="^QuiteRss$"] $workspace4
 assign [class="^Thunderbird$"] $workspace8
 assign [class="^Gajim$"] $workspace9
 assign [class="^ScudCloud Slack_SSB$"] $workspace9
