@@ -32,3 +32,6 @@ alias gpg2='gpg2 --expert'
 
 #qrclip
 alias qrclip='xclip -o | qr2'
+
+# avoid using nano, in favor of vim
+alias nano='read -p "Do you really want to?" && nano "$@"'
