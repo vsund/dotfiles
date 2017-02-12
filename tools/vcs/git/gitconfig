@@ -3,6 +3,9 @@
   email = me@vsund.de
   signingKey = 0x3DBF77B0E4E59C6E
 
+[commit]
+  gpgsign = true
+
 [color]
   branch = true
   diff = true
