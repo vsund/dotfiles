@@ -22,6 +22,7 @@
   default = simple
 
 [alias]
+  # https://github.com/anishathalye/dotfiles/blob/master/gitconfig
   update-submodules = submodule update --init --recursive
   upgrade-submodules = submodule update --init --remote
 
