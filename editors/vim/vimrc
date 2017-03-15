@@ -77,6 +77,9 @@ set number					" display absolute number of current line
 set relativenumber			" display relative line numbers
 set cursorline				" highlight current line
 
+" Disable netrw's history file
+let g:netrw_dirhistmax = 0
+
 " encoding
 set fileencoding=utf-8
 " break at last word instead of last char
