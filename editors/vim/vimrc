@@ -75,6 +75,8 @@ set history=1000			" keep 1000 lines of history
 " set textwidth=120
 set number					" display absolute number of current line
 set relativenumber			" display relative line numbers
+set cursorline				" highlight current line
+
 " encoding
 set fileencoding=utf-8
 " break at last word instead of last char
