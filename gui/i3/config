@@ -103,6 +103,8 @@ bindsym $mod+p exec keepassx2
 # Start Qalculate
 bindsym $mod+c exec qalculate-gtk
 
+# Start Pomodoro
+bindsym $mod+less exec tomate-gtk
 
 
 # Screen brightness controls
