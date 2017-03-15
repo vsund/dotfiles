@@ -5,3 +5,4 @@
     ~/.gnupg/gpg.conf:       tools/crypto/gpg/gpg.conf
     ~/.gnupg/gpg-agent.conf: tools/crypto/gpg/gpg-agent.conf
     ~/.gnupg/dirmngr.conf:   tools/crypto/gpg/dirmngr.conf
+    ~/.gnupg/certs:          tools/crypto/gpg/certs
