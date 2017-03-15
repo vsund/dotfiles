@@ -182,7 +182,7 @@ assign [class="^DrRacket$"] $workspace3
 assign [class="^QuiteRss$"] $workspace4
 assign [class="^Thunderbird$"] $workspace8
 assign [class="^Gajim$"] $workspace9
-assign [class="^ScudCloud Slack_SSB$"] $workspace9
+assign [class="^ScudCloud Slack$"] $workspace9
 assign [class="^Clementine$"] $workspace10
 
 # Floatings
