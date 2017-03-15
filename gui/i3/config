@@ -183,6 +183,7 @@ assign [class="^QuiteRss$"] $workspace4
 assign [class="^Thunderbird$"] $workspace8
 assign [class="^Gajim$"] $workspace9
 assign [class="^ScudCloud Slack$"] $workspace9
+assign [class="^Riot$"] $workspace9
 assign [class="^Clementine$"] $workspace10
 
 # Floatings
@@ -250,6 +251,7 @@ exec owncloud
 exec gajim
 exec scudcloud --minimized=True
 exec qopenvpn
+exec riot-desktop
 
 exec compton
 exec ~/.fehbg
