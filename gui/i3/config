@@ -247,7 +247,7 @@ exec_always setxkbmap -option caps:escape
 # Autostarts
 exec firefox
 exec thunderbird
-exec owncloud
+exec nextcloud
 exec gajim
 exec scudcloud --minimized=True
 exec qopenvpn
