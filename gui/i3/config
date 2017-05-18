@@ -252,7 +252,7 @@ exec gajim
 exec scudcloud --minimized=True
 exec qopenvpn
 exec riot-desktop
-exec redshift.gtk
+exec redshift-gtk
 
 exec compton
 exec ~/.fehbg
