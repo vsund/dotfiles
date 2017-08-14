@@ -256,6 +256,8 @@ exec scudcloud --minimized=True
 exec qopenvpn
 exec riot-desktop
 exec redshift-gtk
+exec tomate-gtk
+exec trezord
 
 exec compton
 exec ~/.fehbg
