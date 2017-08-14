@@ -175,7 +175,9 @@ workspace_auto_back_and_forth yes
 
 # Assigns
 assign [class="^Firefox$"] $workspace1
+assign [class="^Chromium$"] $workspace1
 assign [class="^Termite$"] $workspace2
+assign [class="^Code - OSS$"] $workspace3
 assign [class="^Eclipse$"] $workspace3
 assign [class="^Java$"] $workspace3
 assign [class="^DrRacket$"] $workspace3
@@ -185,6 +187,7 @@ assign [class="^Gajim$"] $workspace9
 assign [class="^ScudCloud Slack$"] $workspace9
 assign [class="^Riot$"] $workspace9
 assign [class="^Clementine$"] $workspace10
+assign [class="^Spotify$"] $workspace10
 
 # Floatings
 for_window [class="^Gajim$"] floating enable
