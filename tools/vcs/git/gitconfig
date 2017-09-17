@@ -33,8 +33,9 @@
   insteadOf = github:
   insteadOf = https://github.com
 
-[url "git@git.vsund.de:"]
-  insteadOf = vs:
+[url "git@git.ntzwrk.org:"]
+  insteadOf = ntzwrk:
+  insteadOf = https://git.ntzwrk.org
 
 [url "git@git.felixsinger.de:"]
   insteadOf = fs:
