@@ -30,6 +30,9 @@ alias ssh-pw='ssh -o PreferredAuthentications=password'
 alias gpg='gpg --expert'
 alias gpg2='gpg2 --expert'
 
+#nvim
+alias vim='nvim'
+
 #qrclip
 alias qrclip='xclip -o | qr2'
 

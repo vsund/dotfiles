@@ -1,48 +1,74 @@
-call vundle#begin()
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
 
-" Vundle needs to handle itself
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-" Status line
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
-" Color schemes
-Plugin 'joshdick/onedark.vim'
+" colorschemes
+" Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
 
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/ReplaceWithRegister'
-Plugin 'mattn/vim-maketable'				" create tables from selection
-Plugin 'dhruvasagar/vim-table-mode'			" handle tables
-Plugin 'mattn/webapi-vim'					" web api
-Plugin 'mattn/gist-vim'						" create gist from within vim
-Plugin 'michaeljsmith/vim-indent-object'	" indent as textobject
-Plugin 'Raimondi/delimitMate'				" autoclose quotes and brackets
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plugin 'Xuyuanp/nerdtree-git-plugin' | Plugin 'ryanoasis/vim-devicons' 
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'neomake/neomake'
-Plugin 'benmills/vimux'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'tpope/vim-sleuth'					" autodetect indent style (tabs vs. spaces)
-Plugin 'sickill/vim-pasta'					" context aware pasting
-Plugin 'elzr/vim-json'						" JSON support
-Plugin 'davidhalter/jedi-vim'				" python autocomplete
-Plugin 'junegunn/goyo.vim'					" distraction free writing
+" Notetaking
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 
-" Syntax highlighting
-Plugin 'PotatoesMaster/i3-vim-syntax'		" highlighting for i3 config files
+Plug 'Rykka/riv.vim', { 'for': 'rst' }						" reStructuredText
 
-" Linter
-Plugin 'w0rp/ale'							" syntax checking for some languages
+Plug 'ervandew/supertab'									" simple autocomplete
+Plug 'tpope/vim-commentary'									" (un)comment
+Plug 'tpope/vim-surround'									" handle surroundings
+Plug 'tpope/vim-repeat'										" make plugin commands repeatable
+Plug 'tpope/vim-dispatch'									" dispatch into tmux panes
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'				" create gist from within vim
+Plug 'Raimondi/delimitMate'									" autoclose quotes and brackets
+Plug 'tpope/vim-fugitive'									" awesome git plugin
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'ryanoasis/vim-devicons'								" icons
+Plug 'ctrlpvim/ctrlp.vim'									" fuzzy file finder
+Plug 'neomake/neomake'										" async linting and making
+Plug 'benmills/vimux', Cond(!empty($TMUX))						" tmux support
+Plug 'sickill/vim-pasta'									" context aware pasting
+Plug 'junegunn/goyo.vim'									" distraction free writing
+Plug 'bronson/vim-trailing-whitespace'						" highlight unwanted whitespaces
 
-" LaTeX
-Plugin 'lervag/vimtex'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-call vundle#end()
+" Python
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }			" python autocomplete
 
+" Rust plugins
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }				" rust autocomplete
+if !empty($TMUX)
+	Plug 'jtdowney/vimux-cargo', { 'for': 'rust' }			" run cargo in tmux using vimux
+endif
+
+Plug 'sheerun/vim-polyglot'									" syntax support for many languages
+
+function! BuildYCM(info)
+	if a:info.status = 'installed' || a:info.force
+		!./install.py --clang-completer --racer-completer
+	endif
+endfunction
+
+if has('nvim')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+
+if has('vim')
+	Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+endif
+
+" Plug 'artur-shaik/vim-javacomplete2'
+
+Plug 'lervag/vimtex'
+
+call plug#end()
 " vim: set filetype=vim ts=4 sw=4 tw=120 noet :
