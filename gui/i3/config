@@ -189,7 +189,7 @@ assign [class="^Gajim$"] $workspace9
 assign [class="^Slack$"] $workspace9
 assign [class="^Riot$"] $workspace9
 assign [class="^Clementine$"] $workspace10
-assign [class="^Spotify$"] $workspace10
+for_window [class="^Spotify$"] move to workspace $workspace10
 
 # Floatings
 for_window [class="^Gajim$"] floating enable
