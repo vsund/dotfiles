@@ -139,7 +139,7 @@ set $workspace3 "3: "
 set $workspace4 "4"
 set $workspace5 "5"
 set $workspace6 "6"
-set $workspace7 "7"
+set $workspace7 "7: &#xf02d;"
 set $workspace8 "8: "
 set $workspace9 "9: "
 set $workspace10 "10: "
@@ -182,6 +182,7 @@ assign [class="^Eclipse$"] $workspace3
 assign [class="^Java$"] $workspace3
 assign [class="^DrRacket$"] $workspace3
 assign [class="^QuiteRss$"] $workspace4
+assign [class="^Wekan$"] $workspace7
 assign [class="^Thunderbird$"] $workspace8
 assign [class="^Gajim$"] $workspace9
 assign [class="^Slack$"] $workspace9
@@ -258,6 +259,7 @@ exec riot-desktop
 exec redshift-gtk
 exec tomate-gtk
 exec trezord
+exec dex ~/.local/share/applications/wekan.desktop
 
 exec compton
 exec ~/.fehbg
