@@ -258,7 +258,6 @@ exec slack
 exec qopenvpn
 exec riot-desktop
 exec redshift-gtk
-exec tomate-gtk
 exec trezord
 exec dex ~/.local/share/applications/wekan.desktop
 
