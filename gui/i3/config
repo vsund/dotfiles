@@ -260,6 +260,7 @@ exec riot-desktop
 exec redshift-gtk
 exec trezord
 exec dex ~/.local/share/applications/wekan.desktop
+exec spotify
 
 exec compton
 exec ~/.fehbg
