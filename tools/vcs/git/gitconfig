@@ -12,7 +12,7 @@
   grep = true
   pager = true
   status = true
-  ui = always
+  ui = true
 
 [core]
   autocrlf = input
