@@ -253,6 +253,7 @@ exec_always setxkbmap -option caps:escape
 exec firefox-beta
 exec thunderbird
 exec nextcloud
+exec syncthing-gtk
 exec gajim
 exec slack
 exec qopenvpn
